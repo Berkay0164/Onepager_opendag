@@ -198,6 +198,79 @@ $aanmeldenUrl = "https://www.curio.nl/mbo/aanmelden";
         .info strong{display:block;font-size:28px;color:var(--blue)}
         .info span{color:var(--muted)}
 
+        /* Opbouw opleiding */
+        .opbouw{background:#f7faf8}
+        .level-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:20px;
+            margin-bottom:35px
+        }
+        .level{
+            background:var(--white);
+            padding:25px;
+            border-radius:14px;
+            border-top:4px solid var(--green);
+            box-shadow:0 5px 20px #142b4a12
+        }
+        .level-number{
+            font-size:14px;
+            font-weight:800;
+            color:var(--purple);
+            text-transform:uppercase;
+            letter-spacing:.08em
+        }
+        .level h3{color:var(--blue);margin:8px 0}
+        .level p{color:var(--muted)}
+        .unit-grid{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:15px
+        }
+        .unit{
+            background:var(--white);
+            padding:20px;
+            border-radius:12px;
+            border:1px solid #dce4df
+        }
+        .unit strong{color:var(--blue);display:block;margin-bottom:7px}
+        .line-grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:20px;
+            margin-top:30px
+        }
+        .line-card{
+            background:var(--white);
+            padding:24px;
+            border-radius:14px
+        }
+        .line-card h3{color:var(--blue);margin-bottom:10px}
+        .line-card ul{padding-left:20px;color:var(--muted)}
+        .line-card li{margin:7px 0}
+
+
+        /* Rooster */
+        .rooster{background:var(--white)}
+        .rooster-image-wrap{
+            background:#f7faf8;
+            padding:20px;
+            border-radius:16px;
+            box-shadow:0 5px 20px #142b4a12;
+            overflow:hidden
+        }
+        .rooster-image{
+            display:block;
+            width:100%;
+            height:auto;
+            border-radius:10px
+        }
+        .rooster-note{
+            text-align:center;
+            color:var(--muted);
+            margin-top:15px
+        }
+
         /* FAQ */
         .faq{background:var(--white)}
         .faq-wrap{max-width:850px;margin:auto}
@@ -249,6 +322,9 @@ $aanmeldenUrl = "https://www.curio.nl/mbo/aanmelden";
 
         /* Responsive */
         @media(max-width:900px){
+            .level-grid{grid-template-columns:1fr}
+            .unit-grid{grid-template-columns:1fr 1fr}
+
             .nav-links{display:none}
             .nav-links.open{
                 display:flex;
@@ -271,7 +347,7 @@ $aanmeldenUrl = "https://www.curio.nl/mbo/aanmelden";
         @media(max-width:600px){
             .hero{padding:70px 0}
             section{padding:60px 0}
-            .cards,.skill-grid,.info-grid{grid-template-columns:1fr}
+            .cards,.skill-grid,.info-grid,.level-grid,.unit-grid,.line-grid{grid-template-columns:1fr}
             .title h2,.project h2{font-size:32px}
             .cta h2{font-size:35px}
             .footer{flex-direction:column;text-align:center}
@@ -290,6 +366,8 @@ $aanmeldenUrl = "https://www.curio.nl/mbo/aanmelden";
                 <li><a href="#opleiding">Opleiding</a></li>
                 <li><a href="#leren">Wat leer je?</a></li>
                 <li><a href="#projecten">Projecten</a></li>
+                <li><a href="#opbouw">Opbouw</a></li>
+                <li><a href="#rooster">Rooster</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
 
@@ -434,36 +512,154 @@ $aanmeldenUrl = "https://www.curio.nl/mbo/aanmelden";
     </div>
 </section>
 
-<section>
+<section class="opbouw" id="opbouw">
     <div class="container">
 
         <div class="title">
-            <h2>Opleiding in het kort</h2>
-            <p>De belangrijkste informatie overzichtelijk bij elkaar.</p>
+            <h2>Opbouw van de opleiding</h2>
+            <p>Curriculum 2026–2027: drie levels, verschillende leeractiviteiten en ruimte voor eigen tempo.</p>
         </div>
 
         <div class="info-grid">
             <div class="info">
                 <strong>4</strong>
-                <span>Niveau</span>
+                <span>Leerjaren regulier</span>
             </div>
-
             <div class="info">
-                <strong>3–4</strong>
-                <span>Jaar</span>
+                <strong>3</strong>
+                <span>Levels</span>
             </div>
-
             <div class="info">
-                <strong>BOL</strong>
-                <span>Leerweg</span>
+                <strong>24</strong>
+                <span>Weken level 1</span>
             </div>
-
             <div class="info">
-                <strong>BBL</strong>
-                <span>Leerweg</span>
+                <strong>4</strong>
+                <span>Weken per unit</span>
             </div>
         </div>
 
+        <div class="level-grid" style="margin-top:35px">
+            <article class="level">
+                <div class="level-number">Level 1</div>
+                <h3>Fundamentals</h3>
+                <p>De basis van webdevelopment: front-end met HTML en CSS. Level 1 duurt 24 weken en bestaat uit 6 units van 4 weken.</p>
+            </article>
+
+            <article class="level">
+                <div class="level-number">Level 2</div>
+                <h3>Professionaliseren</h3>
+                <p>Studenten maken steeds meer eigen keuzes, werken aan complexere challenges en bepalen meer hun eigen tempo.</p>
+            </article>
+
+            <article class="level">
+                <div class="level-number">Level 3</div>
+                <h3>Beroepsgericht</h3>
+                <p>Hier staan BPV, echte challenges uit het werkveld, communicatie met externen en de afronding met examinering centraal.</p>
+            </article>
+        </div>
+
+        <div class="line-grid">
+            <div class="line-card">
+                <h3>Vijf leerlijnen</h3>
+                <ul>
+                    <li>Persoonlijke & professionele ontwikkeling</li>
+                    <li>Projectmatig werken</li>
+                    <li>Veilig & verantwoord ontwikkelen</li>
+                    <li>Programmeren & tools</li>
+                    <li>Generiek</li>
+                </ul>
+            </div>
+
+            <div class="line-card">
+                <h3>Andere belangrijke vakken</h3>
+                <ul>
+                    <li>Nederlands en Engels</li>
+                    <li>Rekenen</li>
+                    <li>Keuzedelen</li>
+                    <li>Burgerschap</li>
+                    <li>Loopbaan en mentorlessen</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="title" style="margin-top:50px">
+            <h2>Zo ziet een unit van 4 weken eruit</h2>
+            <p>Elke unit combineert theorie, praktijk, challenges en reflectie.</p>
+        </div>
+
+        <div class="unit-grid">
+            <div class="unit">
+                <strong>Module · 4 weken</strong>
+                Theorie en praktijk rond een specifiek onderwerp. Afsluiting met een SD-certificaat.
+            </div>
+            <div class="unit">
+                <strong>Challenge · 3 weken</strong>
+                Projectmatig werken via sprints aan een praktijkopdracht.
+            </div>
+            <div class="unit">
+                <strong>Masterclasses · 3 weken</strong>
+                Losstaande lessen van ongeveer 45–60 minuten naast de challenge.
+            </div>
+            <div class="unit">
+                <strong>Reflectieweek · 1 week</strong>
+                Portfolio voorbereiden, presenteren, bewijslast verzamelen en nieuwe leerdoelen stellen.
+            </div>
+        </div>
+
+        <div class="line-grid">
+            <div class="line-card">
+                <h3>Voorbeelden van modules</h3>
+                <ul>
+                    <li>Een basiswebsite maken met HTML en CSS</li>
+                    <li>Interactieve elementen maken met JavaScript</li>
+                    <li>Een werkende database ontwerpen</li>
+                    <li>Werken met een API</li>
+                    <li>Mobile app basics</li>
+                    <li>Een webomgeving live zetten</li>
+                </ul>
+            </div>
+
+            <div class="line-card">
+                <h3>Voorbeelden van masterclasses</h3>
+                <ul>
+                    <li>CSS Grid: een Pinterest-achtige layout</li>
+                    <li>Cookies en localStorage</li>
+                    <li>Prompt engineering voor developers</li>
+                    <li>Een flowchart maken</li>
+                    <li>Presenteren: tips & tricks</li>
+                    <li>Merge-conflicten oplossen</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="line-card" style="margin-top:20px">
+            <h3>Trajecten</h3>
+            <p><strong>Regulier:</strong> de standaardopbouw over 4 leerjaren. <strong>Verlengd:</strong> meer tijd wanneer dat nodig is. <strong>Versneld:</strong> in sommige gevallen kan de opleiding binnen 3 jaar worden afgerond wanneer de student vroeg zelfstandig leeruitkomsten kan aantonen en bewijslast kan aanleveren.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="rooster" id="rooster">
+    <div class="container">
+        <div class="title">
+            <h2>Rooster eerste leerjaar</h2>
+            <p>Bekijk hoe een week in het eerste leerjaar is opgebouwd.</p>
+        </div>
+
+        <div class="rooster-image-wrap">
+            <img
+                class="rooster-image"
+                src="img/Rooster_eerste_leerjaar.png"
+                alt="Rooster van het eerste leerjaar Software Development"
+            >
+        </div>
+
+        <p class="rooster-note">
+            Het rooster laat zien welke activiteiten en lessen terugkomen in het eerste leerjaar.
+        </p>
     </div>
 </section>
 
